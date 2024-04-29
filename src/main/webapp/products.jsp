@@ -24,7 +24,7 @@ if (searchKey != null) {
 	}
 	prodList = productDao.getAllProductsBySearchKey(searchKey);
 
-} else if (catId != null && !(catId.trim().equals("0"))) {
+} else if (category_Id != null && !(category_Id.trim().equals("0"))) {
 	prodList = productDao.getAllProductsByCategoryId(Integer.parseInt(catId.trim()));
 	message = "Showing results for \"" + categoryDao.getCategoryName(Integer.parseInt(catId.trim())) + "\"";
 } else {

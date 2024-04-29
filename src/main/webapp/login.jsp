@@ -22,16 +22,11 @@ label{
 			<div class="col-md-4 offset-md-4">
 				<div class="card">
 					<div class="card-body px-5">
-
-						<div class="container text-center">
-							<img src="Images/login.png" style="max-width: 100px;"
-								class="img-fluid">
-						</div>
 						<h3 class="text-center">Sign-In</h3>
 						<%@include file="Components/alert_message.jsp" %>
 						
 						<!--login-form-->
-						<form id="login-form" action="LoginServlet" method="post">
+						<form id="login-form" action="Login_Servlet" method="post">
 							<input type="hidden" name="login" value="user"> 
 							<div class="mb-3">
 								<label class="form-label">Email</label> <input

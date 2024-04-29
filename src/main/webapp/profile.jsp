@@ -85,7 +85,7 @@ if (activeUser == null) {
 						<%@include file="wishlist.jsp" %> 
 					</div>
 					<div id="order" style="display: none;">
-						<%@ incluede file="order.jsp" %>  
+						<%@ include file="order.jsp" %>  
 					</div>
 				</div>
 			</div>  

@@ -51,7 +51,7 @@ public class Register_Servlet extends HttpServlet {
 			String Name = request.getParameter("name");
 			String Email = request.getParameter("email");
 			String Password = request.getParameter("password");
-			String Phone_Number = request.getParameter("phone");
+			String Phone_Number = request.getParameter("Phone");
 			String Gender = request.getParameter("gender");
 			String Address = request.getParameter("address");
 			String City = request.getParameter("city");

@@ -2,8 +2,8 @@
 <%@page import="Model.Order_Product"%>
 <%@page import="Model.Order"%>
 <%@page import="java.util.List"%>
-<%@page import="DAO.OrderProductController"%>
-<%@page import="DAO.OrderContoller"%>
+<%@page import="Controller.OrderProductController"%>
+<%@page import="Controller.OrderContoller"%>
 <%@page import="Controller.DB_Connection"%>
 <%@page import="Model.User"%>
 <%@page errorPage="error_exception.jsp"%>
@@ -50,18 +50,17 @@ List<Order> orderList = orderDao.getAllOrderByUserId(u2.getUser_Id());
 			</tr>
 			<%
 			for (Order order : orderList) {
-				List<Order_Product> ordProdList = ordProdDao.getAllOrderedProduct(order.getId());
+				List<Order_Product> ordProdList = ordProdDao.getAllOrderedProduct(order.getOrder_Id());
 				for (Order_Product orderProduct : ordProdList) {
 			%>
 			<tr class="text-center">
 				<td><img src="Product_imgs\<%=orderProduct.getImage()%>"
 					style="width: 40px; height: 40px; width: auto;"></td>
-				<td class="text-start"><%=order.getOrderId()%></td>
+				<td class="text-start"><%=order.getOrder_Id()%></td>
 				<td class="text-start"><%=orderProduct.getName()%></td>
 				<td><%=orderProduct.getQuantity()%></td>
 				<td><%=orderProduct.getPrice() * orderProduct.getQuantity()%></td>
-				<td><%=order.getDate()%></td>
-				<td><%=order.getPayementType()%></td>
+				<td><%=order.getPaymentType()%></td>
 				<td class="fw-semibold" style="color: green;"><%=order.getStatus()%></td>
 			</tr>
 			<%

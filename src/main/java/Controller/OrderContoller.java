@@ -21,7 +21,7 @@ public class OrderContoller {
 	public int insertOrder(Order order) {
 		int id = 0;
 		try {
-			String query = "insert into `order`(orderid, status, paymentType, userId) values(?, ?, ?, ?)";
+			String query = "insert into `order`( status, paymentType, userId) values(?, ?, ?, ?)";
 			PreparedStatement psmt = this.con.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
 
 			psmt.setInt(1, order.getOrder_Id()); ////Not Fix
@@ -56,8 +56,7 @@ public class OrderContoller {
 			ResultSet rs = psmt.executeQuery();
 			while (rs.next()) {
 				Order order = new Order();
-				order.setOrder_Id(rs.getInt("id"));
-				//order.setOrder_Id(rs.getString("orderid")); ///Not Fix
+				order.setOrder_Id(rs.getInt("Order_id"));
 				order.setStatus(rs.getString("status"));
 				order.setPaymentType(rs.getString("paymentType"));
 				order.setUser_Id(uid);
@@ -79,7 +78,6 @@ public class OrderContoller {
 			ResultSet rs = psmt.executeQuery();
 			while (rs.next()) {
 				order.setOrder_Id(rs.getInt("id"));
-				//order.setOrderId(rs.getString("orderid")); //Not Fix
 				order.setStatus(rs.getString("status"));
 				order.setPaymentType(rs.getString("paymentType"));
 				order.setUser_Id(rs.getInt("userId"));
@@ -99,7 +97,6 @@ public class OrderContoller {
 			while (rs.next()) {
 				Order order = new Order();
 				order.setOrder_Id(rs.getInt("id"));
-				//order.setOrderId(rs.getString("orderid")); //Not Fix
 				order.setStatus(rs.getString("status"));
 				order.setPaymentType(rs.getString("paymentType"));
 				order.setUser_Id(rs.getInt("userId"));

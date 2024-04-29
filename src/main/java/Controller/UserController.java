@@ -60,7 +60,7 @@ public class UserController {
 				user.setName(set.getString("name"));
 				user.setEmail(set.getString("email"));
 				user.setPassword(set.getString("password"));
-				user.setPhone_Number(set.getString("phone"));
+				user.setPhone_Number(set.getString("Phone"));
 				user.setGender(set.getString("gender"));
 				user.setAddress(set.getString("address"));
 				user.setCity(set.getString("city"));

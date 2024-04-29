@@ -21,10 +21,6 @@ label {
 			<div class="col-md-4 offset-md-4">
 				<div class="card">
 					<div class="card-header px-5">
-						<div class="container text-center">
-							<img src="Images/admin.png" style="max-width: 100px;"
-								class="img-fluid">
-						</div>
 						<h3 class="text-center">Login</h3>
 						<%@include file="Components/alert_message.jsp"%>
 					</div>

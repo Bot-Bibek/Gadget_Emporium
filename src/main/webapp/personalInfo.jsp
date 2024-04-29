@@ -35,7 +35,7 @@ label {
 			<div class="col-md-6 mt-2">
 				<label class="form-label">Mobile number</label> <input type="text"
 					name="Phone" placeholder="Mobile number" class="form-control"
-					value="<%=user1.getPhone()%>">
+					value="<%=user1.getPhone_Number()%>">
 			</div>
 			<div class="col-md-6 mt-5">
 				<label class="form-label pe-3">Gender</label>
@@ -82,7 +82,7 @@ label {
 			</div>
 		</div>
 		<div class="row mt-2">
-			<label class="form-label">District</label> <input
+			<label class="form-label">Province</label> <input
 				class="form-control" type="text" name="District"
 				placeholder="District" value="<%=user1.getProvince()%>">
 		</div>

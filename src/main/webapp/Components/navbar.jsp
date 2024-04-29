@@ -129,7 +129,7 @@ List<Category> categoryList = categoryController.getAllCategories();
 				<li class="nav-item active pe-3"><a class="nav-link"
 					aria-current="page" href="profile.jsp"><%=user.getName()%></a></li>
 				<li class="nav-item pe-3"><a class="nav-link"
-					aria-current="page" href="LogoutServlet?user=user"><i
+					aria-current="page" href="Logout_Servlet?user=user"><i
 						class="fa-solid fa-user-slash" style="color: #fafafa;"></i>&nbsp;Logout</a></li>
 			</ul>
 			<%
@@ -147,8 +147,6 @@ List<Category> categoryList = categoryController.getAllCategories();
 							class="fa fa-sign-in"></i>&nbsp;Login</a></li>
 					<li><a class="dropdown-item" href="adminlogin.jsp"><i
 							class="fa fa-list"></i>&nbsp;Admin</a></li>
-					<li><a class="dropdown-item" href="#"><i
-							class="fa fa-shopping-cart"></i> My Cart</a></li>
 
 				</ul></li>
 

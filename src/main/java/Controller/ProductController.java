@@ -91,12 +91,12 @@ public class ProductController {
 		return list;
 	}
 
-	public Product getProductsByProductId(int pid) {
+	public Product getProductsByProductId(int product_id) {
 		Product product = new Product();
 		try {
 			String query = "select * from product where product_id = ?";
 			PreparedStatement psmt = this.con.prepareStatement(query);
-			psmt.setInt(1, pid);
+			psmt.setInt(1, product_id);
 			ResultSet rs = psmt.executeQuery();
 			rs.next();
 
@@ -255,12 +255,12 @@ public class ProductController {
 		return count;
 	}
 
-	public float getProductPriceById(int pid) {
+	public float getProductPriceById(int product_id) {
 		float price = 0;
 		try {
 			String query = "select price, discount from product where product_id = ?";
 			PreparedStatement psmt = this.con.prepareStatement(query);
-			psmt.setInt(1, pid);
+			psmt.setInt(1, product_id);
 			ResultSet rs = psmt.executeQuery();
 			rs.next();
 			float orgPrice = rs.getInt(1);
@@ -273,12 +273,12 @@ public class ProductController {
 		}
 		return price;
 	}
-	public int getProductQuantityById(int pid) {
+	public int getProductQuantityById(int product_id) {
 		int qty = 0;
 		try {
 			String query = "select quantity from product where product_id = ?";
 			PreparedStatement psmt = this.con.prepareStatement(query);
-			psmt.setInt(1, pid);
+			psmt.setInt(1, product_id);
 			ResultSet rs = psmt.executeQuery();
 			rs.next();
 			qty = rs.getInt(1);

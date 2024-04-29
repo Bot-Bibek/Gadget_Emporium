@@ -58,7 +58,7 @@ public class Login_Servlet extends HttpServlet {
 
 				// getting user through entered email and passsword
 				UserController userController = new UserController(DB_Connection.getConnection());
-				User user = userController.getUserByEmailPassword(userEmail, userPassword);
+				User user = userController.getUserByEmailPassword(Email, Password);
 
 				// storing current user in session
 				HttpSession session = request.getSession();

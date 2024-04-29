@@ -21,8 +21,6 @@ import Model.Order_Product;
 import Model.Product;
 import Model.User;
 import Controller.DB_Connection;
-import Controller.OrderID;
-
 
 /**
  * Servlet implementation class Order_Servlet
@@ -62,7 +60,6 @@ public class Order_Servlet extends HttpServlet {
 		String from = (String) session.getAttribute("from");
 		String paymentType = request.getParameter("payementMode");
 		User user = (User) session.getAttribute("activeUser");
-		String orderId = OrderID.getOrderId();
 		String status = "Order Placed";
 
 		if (from.trim().equals("cart")) {
@@ -100,14 +97,14 @@ public class Order_Servlet extends HttpServlet {
 
 			try {
 
-				int pid = (int) session.getAttribute("pid");
-				Order order = new Order(status, paymentType, user.getUser_Id()); //Oreder ID Not Fix
+				int product_id = (int) session.getAttribute("product_id");
+				Order order = new Order(status, paymentType, user.getUser_Id()); 
 				OrderContoller orderController = new OrderContoller(DB_Connection.getConnection());
 				int id = orderController.insertOrder(order);
 				OrderProductController orderProductController = new OrderProductController(DB_Connection.getConnection());
 				ProductController productController = new ProductController(DB_Connection.getConnection());
 
-				Product prod = productController.getProductsByProductId(pid);
+				Product prod = productController.getProductsByProductId(product_id);
 				String prodName = prod.getName();
 				int prodQty = 1;
 				float price = prod.getProductPriceAfterDiscount();
@@ -117,10 +114,10 @@ public class Order_Servlet extends HttpServlet {
 				orderProductController.insertOrderedProduct(orderedProduct);
 
 				// updating(decreasing) quantity of product in database
-				productController.updateQuantity(pid, productController.getProductQuantityById(pid) - 1);
+				productController.updateQuantity(product_id, productController.getProductQuantityById(product_id) - 1);
 
 				session.removeAttribute("from");
-				session.removeAttribute("pid");
+				session.removeAttribute("product_id");
 			} catch (Exception e) {
 				e.printStackTrace();
 			}

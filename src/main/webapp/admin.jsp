@@ -50,8 +50,6 @@ a {
 		<%@include file="Components/alert_message.jsp"%>
 		<div class="row">
 			<div class="container text-center" id="details">
-				<img src="Images/admin.png" style="max-width: 180px;"
-					class="img-fluid">
 				<h3>
 					Welcome "<%=activeAdmin.getName()%>"
 				</h3>
